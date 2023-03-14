@@ -4,7 +4,9 @@
     "target": "ES2019",
     "module": "CommonJS",
     "sourceMap": true,
-
+    "lib": [
+      "ES2020.Promise",
+    ],
     "strict": true,
     "noImplicitAny": true,
 
