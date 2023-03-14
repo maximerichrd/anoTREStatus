@@ -1,0 +1,29 @@
+{
+  "name": "node-boots",
+  "version": "1.0.0",
+  "description": "Bootstrap a node project with ts and mysql",
+  "main": "index.js",
+  "repository": "git@github.com:maximerichrd/node-boots.git",
+  "author": "Maxime RICHARD <maxime.richard@fabernovel.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn run build && node ./dist/index.js",
+    "build": "yarn run clean && ./node_modules/typescript/bin/tsc",
+    "fill-db": "yarn run build && node ./dist/db-init/initdb.js",
+    "start:watch": "nodemon --watch './src' -e ts --exec 'yarn run start'",
+    "clean": "rimraf ./dist"
+  },
+  "dependencies": {
+    "@types/node": "^15.0.2",
+    "knex": "2.3.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.7",
+    "rimraf": "3.0.2",
+    "got": "11.8.0",
+    "uuid": "8.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.3",
+    "@types/uuid": "8.3.0"
+  }
+}
